@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="B.css">
+</head>
+<html>
+    
+<div id="demo">
+    
+
+</div>
+<div id="butt"></div>
+
+</litle>
+<form>
+    
+</form>
+
+
+
+<body>
+    
+
+    
+    <script>
+     
+     function removeButt() {
+ var elem = document.getElementById('butt');
+ elem.parentNode.removeChild(elem);
+} 
+
+        
+             
+removeButt()
+           
+       //lina bech ne5o N hiya taille mit3 tableau
+   
+       do {
+           n = Number(prompt("size of the map "));
+            
+       } while ((n < 2) || (n > 10));
+       var f = n - 1;
+       //lina bech nisne3e tableau de jeux (n * n)
+       let arr = Array.from(Array(n), () => new Array(n).fill(" [?] "));
+       let line = 1; // HETHI bliaset line win bech yabda    || w l rahi line ili enti fiha dima
+       let column = 1; // HETHI bilaset colonne win bech yabda || w c rahi colinne ili enti fiha dima
+   
+       arr[line][column] = "[T]"//HETHA enti minlouwel
+       //HETHA ENTI BECH TIMCHI
+   
+   
+   
+   
+      var rl=Math.floor(Math.random()*n); 
+      var rc=Math.floor(Math.random()*n);
+      console.log("rl,rc: ", rl, rc)
+       var test = 0; //o ken enti jewk behi o=0 si non bech tiwali 1 w lezm ti3ewd ta3ti move e5r
+       previous_line = line;// HETHI bilaset joueur fi iteration 9abl fi line
+       previous_column = column;// HETHI bilaset joueur fi iteration 9abl fi colonne
+   
+       var previous_line = line;
+       var previous_column = column;
+       //ch hiya move bi lowercase
+       var ch = "Z";
+       window.addEventListener("keypress", checkKeyPress, false);
+       function checkKeyPress(key) { 
+           var key;
+           if (key.keyCode == "83") {
+               if (f == line) {
+                   console.log("error3")
+                   test = 1;
+                   line = line - 1;
+               }
+               arr[previous_line][previous_column] = "  ....  ";
+   
+               line = line + 1
+               previous_line = line;
+               previous_column = column;
+   
+               console.log(line, column, previous_line, previous_column);
+               arr[line][column] = "[T]";
+               if ((line ==rl) && (column == rc)) {
+                   alert("gg you won ");
+       window.location.href ='file:///C:/Users/gtanf/OneDrive/Bureau/PROJET/menu.html';
+
+               }
+   
+               var ch = "";
+   
+               for (let i = 0; i < n; i++) {
+                   for (let j = 0; j < n; j++) {
+                       ch += " " + arr[i][j] + "  ";
+   
+                   }
+                   ch += "<br/>";
+                   document.getElementById("demo").innerHTML = ch;
+   
+   
+               };
+           }
+           else if (key.keyCode == "68") {
+               if (f <= column) {
+                   console.log("error1")
+   
+                   test = 1;
+                   column = column - 1;
+               }
+               arr[previous_line][previous_column] = "  .....  ";
+   
+               column = column + 1
+               previous_line = line;
+               previous_column = column;
+               console.log(line, column);
+               arr[line][column] = "[T]"
+               if ((line ==rl) && (column == rc)) {
+                   alert("gg you won ");
+                  window.location.href ='file:///C:/Users/gtanf/OneDrive/Bureau/PROJET/menu.html';
+
+               };
+   
+               var ch = "";
+   
+               for (let i = 0; i < n; i++) {
+                   for (let j = 0; j < n; j++) {
+                       ch += " " + arr[i][j] + "  ";
+   
+                   }
+                   ch += "<br/>";
+                   document.getElementById("demo").innerHTML = ch;
+   
+               };
+   
+           } else if (key.keyCode == "90" ) {
+               if (line == 0) {
+                   console.log("error4")
+   
+                   test = 1;
+                   line++;
+               }
+   
+               arr[previous_line][previous_column] = "  .....  ";
+   
+               line = line - 1
+               previous_line = line;
+               previous_column = column;
+               console.log(line, column);
+               arr[line][column] = " [T] "
+               if ((line ==rl) && (column == rc)) {
+                   alert("gg you won ");
+              window.location.href ='file:///C:/Users/gtanf/OneDrive/Bureau/PROJET/menu.html';
+
+               };
+   
+               var ch = "";
+   
+               for (let i = 0; i < n; i++) {
+                   for (let j = 0; j < n; j++) {
+                       ch += " " + arr[i][j] + "  ";
+   
+                   }
+                   ch += "<br/>";
+                   document.getElementById("demo").innerHTML = ch;
+   
+               };
+           } else if (key.keyCode == ("81")) {
+               if (column == 0) {
+                   console.log("error2")
+   
+                   test = 1;
+                   column = column + 1;
+               }
+               arr[previous_line][previous_column] = "  .....  ";
+               column = column - 1
+               previous_line = line;
+               previous_column = column;
+               console.log(line, column);
+               arr[line][column] = " [T] ";
+               if ((line ==rl) && (column == rc)) {
+                   alert("gg you won ");
+                  window.location.href ='file:///C:/Users/gtanf/OneDrive/Bureau/PROJET/menu.html';
+               }
+   
+               var ch = "";
+   
+   
+               for (let i = 0; i < n; i++) {
+                   for (let j = 0; j < n; j++) {
+                       ch += " " + arr[i][j] + "  ";
+   
+                   }
+                   ch += "<br/>";
+   
+               }
+   
+               document.getElementById("demo").innerHTML = ch;
+   
+           }
+       }
+   
+   
+   
+   
+       arr[previous_line][previous_column] = "  ...  ";
+       console.log(line, column);
+       arr[line][column] = " [T] ";
+   
+       var ch = "";
+   
+       for (let i = 0; i < n; i++) {
+           for (let j = 0; j < n; j++) {
+               ch += " " + arr[i][j] + "  ";
+   
+           }
+           ch += "<br/>";
+   
+       }
+       document.getElementById("demo").innerHTML = ch;
+      
+
+       
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   </script>
+</body>
+
+</html>
+
+
+
+
+
+    
