@@ -69,9 +69,13 @@ removeButt()
        var previous_column = column;
        //ch hiya move bi lowercase
        var ch = "Z";
+       document.onkeydown=checkKeyPress;
        window.addEventListener("keypress", checkKeyPress, false);
+       
+
        function checkKeyPress(key) { 
            var key;
+            key = key || window.event;
            if (key.keyCode == "40") {
                if (f == line) {
                    console.log("error3")
