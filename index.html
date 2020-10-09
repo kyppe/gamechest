@@ -43,7 +43,7 @@ removeButt()
        //lina bech ne5o N hiya taille mit3 tableau
    
        do {
-           n = Number(prompt("size of the map "));
+           n = Number(prompt("size of the map (2->10) "));
             
        } while ((n < 2) || (n > 10));
        var f = n - 1;
@@ -69,12 +69,13 @@ removeButt()
        var previous_column = column;
        //ch hiya move bi lowercase
        var ch = "Z";
-        document.onkeydown=checkKeyPress;
+       document.onkeydown=checkKeyPress;
        window.addEventListener("keypress", checkKeyPress, false);
+       
+
        function checkKeyPress(key) { 
            var key;
-             key = key || window.event;
-
+            key = key || window.event;
            if (key.keyCode == "40") {
                if (f == line) {
                    console.log("error3")
@@ -244,9 +245,3 @@ removeButt()
 </body>
 
 </html>
-
-
-
-
-
-    
