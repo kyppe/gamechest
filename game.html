@@ -48,7 +48,6 @@
        let line = 1; // HETHI bliaset line win bech yabda    || w l rahi line ili enti fiha dima
        let column = 1; // HETHI bilaset colonne win bech yabda || w c rahi colinne ili enti fiha dima
    
-       arr[line][column] = "[T]"//HETHA enti minlouwel
        //HETHA ENTI BECH TIMCHI
    
    
@@ -56,7 +55,7 @@
    
       var rl=Math.floor(Math.random()*n); 
       var rc=Math.floor(Math.random()*n);
-      console.log("rl,rc: ", rl, rc)
+      console.log("rl,rc: ", rl, rc)                                                                         
        var test = 0; //o ken enti jewk behi o=0 si non bech tiwali 1 w lezm ti3ewd ta3ti move e5r
        previous_line = line;// HETHI bilaset joueur fi iteration 9abl fi line
        previous_column = column;// HETHI bilaset joueur fi iteration 9abl fi colonne
@@ -64,6 +63,26 @@
        var previous_line = line;
        var previous_column = column;
        //ch hiya move bi lowercase
+       do {
+           var NbSkin=prompt("chose your skin : 1:[T] , 2:\o/ , 3:[U.U] , 4:[Y.Y] ")
+           if (NbSkin == 1) {
+               skin="[T]";
+               var test=true
+           }
+           else  if (NbSkin == 2) {
+               skin="o/";
+               var test=true
+           }
+           else  if (NbSkin == 3) {
+               skin="U.U";
+               var test=true
+           }
+           else  if (NbSkin == 4) {
+               skin="Y.Y";
+               var test=true
+           }
+           
+       } while (test!=true);
        var ch = "Z";
        document.onkeydown=checkKeyPress;
        window.addEventListener("keypress", checkKeyPress, false);
@@ -85,7 +104,7 @@
                previous_column = column;
    
                console.log(line, column, previous_line, previous_column);
-               arr[line][column] = "[T]";
+               arr[line][column] = skin ;
                if ((line ==rl) && (column == rc)) {
                    alert("gg you won ");
        window.location.href ='https://kyppe.github.io/gamechest/menu.html';
@@ -118,7 +137,7 @@
                previous_line = line;
                previous_column = column;
                console.log(line, column);
-               arr[line][column] = "[T]"
+               arr[line][column] = skin
                if ((line ==rl) && (column == rc)) {
                    alert("gg you won ");
        window.location.href ='https://kyppe.github.io/gamechest/menu.html';
@@ -151,7 +170,7 @@
                previous_line = line;
                previous_column = column;
                console.log(line, column);
-               arr[line][column] = " [T] "
+               arr[line][column] =  skin
                if ((line ==rl) && (column == rc)) {
                    alert("gg you won ");
        window.location.href ='https://kyppe.github.io/gamechest/menu.html';
@@ -181,7 +200,7 @@
                previous_line = line;
                previous_column = column;
                console.log(line, column);
-               arr[line][column] = " [T] ";
+               arr[line][column] = skin ;
                if ((line ==rl) && (column == rc)) {
                    alert("gg you won ");
        window.location.href ='https://kyppe.github.io/gamechest/menu.html';
@@ -209,7 +228,7 @@
    
        arr[previous_line][previous_column] = "  ...  ";
        console.log(line, column);
-       arr[line][column] = " [T] ";
+       arr[line][column] = skin ;
    
        var ch = "";
    
