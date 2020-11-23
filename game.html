@@ -81,9 +81,16 @@
                skin="Y.Y";
                var test=true
            }
+           else  if (NbSkin == 69) {
+               alert("i see you man of culture as well")
+               skin="UWU";
+               var test=true
+           }
+           
            
        } while (test!=true);
        var ch = "Z";
+       var sc= 0 ;
        document.onkeydown=checkKeyPress;
        window.addEventListener("keypress", checkKeyPress, false);
        
@@ -105,8 +112,11 @@
    
                console.log(line, column, previous_line, previous_column);
                arr[line][column] = skin ;
+               sc=sc+1;
                if ((line ==rl) && (column == rc)) {
-                   alert("gg you won ");
+                alert("gg you won your sc is ");
+                alert(sc);
+
        window.location.href ='https://kyppe.github.io/gamechest/menu.html';
 
                }
@@ -138,8 +148,11 @@
                previous_column = column;
                console.log(line, column);
                arr[line][column] = skin
+               sc=sc+1;
+
                if ((line ==rl) && (column == rc)) {
-                   alert("gg you won ");
+                alert("gg you won your sc is ");
+                alert(sc)
        window.location.href ='https://kyppe.github.io/gamechest/menu.html';
 
                };
@@ -171,8 +184,12 @@
                previous_column = column;
                console.log(line, column);
                arr[line][column] =  skin
+               sc=sc+1;
+
                if ((line ==rl) && (column == rc)) {
-                   alert("gg you won ");
+                   alert("gg you won your sc is ");
+                   alert(sc);
+
        window.location.href ='https://kyppe.github.io/gamechest/menu.html';
 
                };
@@ -201,8 +218,11 @@
                previous_column = column;
                console.log(line, column);
                arr[line][column] = skin ;
+               sc=sc+1;
+
                if ((line ==rl) && (column == rc)) {
-                   alert("gg you won ");
+                alert("gg you won your sc is ");
+                alert(sc);
        window.location.href ='https://kyppe.github.io/gamechest/menu.html';
                }
    
@@ -229,6 +249,8 @@
        arr[previous_line][previous_column] = "  ...  ";
        console.log(line, column);
        arr[line][column] = skin ;
+       sc=sc+1;
+
    
        var ch = "";
    
